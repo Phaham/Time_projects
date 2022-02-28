@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>A Digital Clock</title>
+</head>
+
+<body>
+    <div class="bg-circles">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+    </div>
+    <div class="wrapper">
+        <div class="display">
+            <div id="time">12:00:00</div>
+            <span></span>
+            <span></span>
+            
+        </div>
+    </div>
+    <!-- button back -->
+    <!-- <div class="button"> -->
+        <div id="button1">
+            <a class="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                GO BACK
+            </a>
+        </div>
+    <!-- </div> -->
+
+
+
+    <!-- <a class="back" href="index.html">Back To Home</a> -->
+
+    <!-- stopping Time by clearInterval -->
+    <!-- <button onclick="clearInterval(clock)">STOP TIME 🕒</button><br>
+    <p class="stop"></p>
+
+    <script type="text/javascript">
+        const clock = setInterval(DigitalClock, 1000);
+        function DigitalClock() {
+            const date = new Date();
+            const time = date.toLocaleTimeString();//to get only time out of date
+            document.querySelector('.stop').innerHTML = time;
+        }
+    </script> -->
+
+    <script>
+        setInterval(() => {
+            const time = document.querySelector('#time');
+            let date = new Date();
+            /*
+            ⚡One way ->
+               let hours = date.getHours();
+               let minutes = date.getMinutes();
+               let seconds = date.getSeconds();
+               let day_night = "AM"
+
+               if(hours>12){
+                   day_night = "PM"
+                   hours = hours - 12;
+               }
+               if(hours<10){
+                   hours = "0" + hours;
+               }
+               if(minutes>12){
+                   minutes = "0" + minutes;
+               }
+               if(seconds<10){
+                   seconds = "0" + seconds;
+               }
+               time.textContent = hours + ":" + minutes + ":" + seconds + " " + day_night;
+            */
+            // ⚡Second way ->
+            const time2 = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });//to get only time out of date
+            time.textContent = time2;
+        })
+        // Button Back -
+
+        let btnBack = document.getElementById('button1');
+        btnBack.addEventListener('click', () => {
+            window.history.back();
+            // history.go(-1);
+        })
+    </script>
+</body>
+
+</html>

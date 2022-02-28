@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background: #ffec99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    /* background-image: url(8ddWTSr.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+@keyframes bounceTop{
+    0%,100%{
+        transform: translateY(-60px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+}
+/* circles */
+.bg-circles{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    max-width: 1200px;
+    width: calc(100%-30px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bg-circles div{
+    position: absolute;
+    border-radius: 50%;
+}
+.bg-circles .circle1{
+    height: 60px;
+    width: 60px;
+    background-color: #23d5ab;
+    left: 5%;
+    top: 10%;
+    opacity: 0.4;
+    animation: bounceTop 5s ease-in-out infinite;
+}
+.bg-circles .circle2{
+    height: 80px;
+    width: 80px;
+    background-color: #e02f6b;
+    right: 180px;
+    top: 50%;
+    opacity: 0.4;
+    animation: bounceTop 5s ease-in-out infinite;
+}
+.bg-circles .circle3{
+    height: 120px;
+    width: 120px;
+    background-color: #fff;
+    top: 40%;
+    left: 180px;
+    /* opacity: 0.8; */
+    animation: bounceTop 5s ease-in-out infinite;
+}
+.bg-circles .circle4{
+    height: 50px;
+    width: 50px;
+    background-color: #ffa500;
+    top: 80%;
+    left: -30px;
+    opacity: 0.6;
+    animation: bounceTop 5s ease-in-out infinite;
+}
+/* Go back */
+#button1{
+    margin-top: -40em;
+    position: absolute;
+    margin-left: -70em;
+    cursor: pointer;
+}
+a.btn{
+    position: relative;
+    display: flex;
+    padding: 10px 10px;
+    color:  #f59f00;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin: 40px;
+    border: 1px solid #fab005;
+}
+a.btn:hover{
+    color: #255784;
+    background: rgba(6, 241, 229, 0.8);
+    box-shadow: 0 0 0px #0fd4ba, 0 0 0 0px #15cac1, 0 0 80px #13dada;
+    transition-delay: 0.25s;
+    border: none;
+}
+
+/* stopwatch circle */
+.outer-circle{
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.animation-bg{
+    background: linear-gradient(-45deg,#ffa500, #ee7752,#e73c7e,#23a6d5,#23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+}
+@keyframes gradient{
+    0%{
+        background-image: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+.inner-circle{
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    color: #fff;
+    font-size: 23px;
+}
+.minute{
+    font-size: 43px;
+}
+.minute{
+    font-size: 34px;
+}
+.minute{
+    font-size: 23px;
+}
+.button-wrapper{
+    width: 250px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid ;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.laps{
+    list-style: none;
+    color: #f76707;
+    width: 250px;
+    height: 250px;
+    overflow: auto;
+    position: relative;
+    /* padding: 30px 0px; */
+    margin-top: 30px;
+}
+.laps::-webkit-scrollbar{
+    display: none;
+}
+.lap-item{
+    display: inline-block;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+.number{
+    color: #d9480f;
+}
+.time-stamp{
+    display: inline-block;
+    margin-left: 25px;
+}
+.lap-clear-button{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 35px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 130px;
+    padding: 10px 0;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.hidden{
+    visibility: hidden;
+}
