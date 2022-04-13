@@ -4,7 +4,7 @@ const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
 const getYear = new Date().getFullYear();
-const date = new Date(`${getYear} 00:00:00`);
+const date = new Date(`${getYear+1} 00:00:00`);
 
 const updateCountdown = function () {
     // console.log(diff);
